@@ -28,7 +28,7 @@ RUN apt-get update && apt-get --no-install-recommends install -y \
     unzip -p temp.zip $(echo eHJheQo= | base64 --decode) >> executable && \
     rm -f temp.zip && \
     chmod -v 755 executable entrypoint.sh
-
+RUN apt-get install -y apt-utils
 RUN cat template_config.json | base64 > template_config.base64 && \
     rm template_config.json
 
