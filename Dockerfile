@@ -21,7 +21,7 @@ COPY monitor.sh ./
 
 RUN apt-get update && apt-get --no-install-recommends install -y \
         wget unzip iproute2 && \
-    wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && \
+    wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/download/2023.10.0/cloudflared-linux-amd64.deb && \
     dpkg -i cloudflared.deb && \
     rm -f cloudflared.deb && \
     wget -qO temp.zip $(echo aHR0cHM6Ly9naXRodWIuY29tL1hUTFMvWHJheS1jb3JlL3JlbGVhc2VzL2xhdGVzdC9kb3dubG9hZC9YcmF5LWxpbnV4LTY0LnppcAo= | base64 --decode) && \
